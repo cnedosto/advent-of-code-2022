@@ -22,7 +22,7 @@
     "typescript": "~4.9"
   },
   "scripts": {
-    "start": "node build/src/day_01.js",
+    "start": "node build/src/day_02.js",
     "clean": "rimraf coverage build tmp",
     "prebuild": "npm run lint",
     "build": "tsc -p tsconfig.json",
