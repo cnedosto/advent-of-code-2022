@@ -1,5 +1,5 @@
 import * as fs from 'fs'
-import { compareLowestAndHighest } from '../src/day_04.js'
+import { compareLowestAndHighest, isOverlaping } from '../src/day_04.js'
 
 const file = fs.readFileSync('./inputs/test/day_04.txt', 'utf8')
 
@@ -44,6 +44,16 @@ test('Compare to see if contained', () => {
   expect(compareLowestAndHighest(input1)).toEqual(false)
   expect(compareLowestAndHighest(input2)).toEqual(true)
   expect(compareLowestAndHighest(input3)).toEqual(true)
+})
+
+test('Compare overlap at all', () => {
+  const input1 = [2, 4, 6, 8]
+  const input2 = [2, 8, 3, 7]
+  const input3 = [6, 6, 4, 6]
+
+  expect(isOverlaping(input1)).toEqual(false)
+  expect(isOverlaping(input2)).toEqual(true)
+  expect(isOverlaping(input3)).toEqual(true)
 })
 
 test('Count the number of pairs', () => {
